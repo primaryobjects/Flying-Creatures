@@ -1,0 +1,64 @@
+﻿@model IList<FlyingCreatures.Models.Creature>
+
+@{
+    View.Title = "Flying Creatures!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head
+{
+    <script src="@Url.Content("~/Content/flexigrid/flexigrid.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/flexigrid/css/flexigrid/flexigrid.css")" rel="stylesheet" type="text/css" />
+}
+
+@section Code
+{
+    initializeGrid();
+
+    function initializeGrid()
+    {
+        $('.creatureGrid').flexigrid
+        ({
+            buttons: [{ name: 'Add', bclass: 'add', onpress: addCreature},
+                      { name: 'Delete', bclass: 'delete', onpress : deleteCreature}],
+            singleSelect: true
+         });
+    }
+
+    function addCreature(com, grid)
+    {
+        // Submit the add form.
+        $('#addLink').submit();
+    }
+
+    function deleteCreature(com, grid)
+    {
+        // Set the id in the form to be the entity to delete.
+        var rowId = $('.trSelected', grid)[0].id;
+        document.getElementById('id').value = rowId;
+
+        // Submit the delete form.
+        $('#deleteLink').submit();
+    }
+
+    function successLoad() 
+    {
+        // The ajax call updates the partial view, so rebuild the grid.
+        initializeGrid();
+    }
+}
+
+<h2>Flying Creatures!</h2>
+
+@using (@Ajax.BeginForm("GenerateCreature", "Index", new AjaxOptions { LoadingElementId = "ctrlProgress", InsertionMode = InsertionMode.Replace, UpdateTargetId = "creatureGridDiv", OnSuccess = "successLoad();" }, new { id = "addLink" })) { }
+
+@using (@Ajax.BeginForm("Delete", "Index", new AjaxOptions { LoadingElementId = "ctrlProgress", InsertionMode = InsertionMode.Replace, UpdateTargetId = "creatureGridDiv", OnSuccess = "successLoad();" }, new { id = "deleteLink" }))
+{
+    <input type="hidden" id="id" name="id" />
+}
+
+<div id="creatureGridDiv">
+    @Html.Partial("_CreatureGrid")
+</div>
+
+<div id="ctrlProgress" style="display:none; position:absolute; top:30%; left:50%;"><img src="@Url.Content("~/Content/ajax-loader.gif")" alt="ajax progress" /></div>

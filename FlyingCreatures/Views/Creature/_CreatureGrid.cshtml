@@ -1,0 +1,21 @@
+﻿@model IList<FlyingCreatures.Models.Creature>
+
+<table class="creatureGrid">
+    <thead>
+        <tr>
+            <th width="100">Creature Name</th>
+            <th width="100">Age</th>
+            <th width="100">Weapon</th>
+        </tr>
+    </thead>
+    <tbody id="creatureGridBody">
+    @foreach (var creature in Model)
+    {
+        <tr id="@creature.Id">
+            <td>@creature.Name</td>
+            <td>@creature.Age</td>
+            <td>@creature.Weapon.Name (@creature.Weapon.DamageMinimum - @creature.Weapon.DamageMaximum dmg)</td>
+        </tr>
+    }
+    </tbody>
+</table>

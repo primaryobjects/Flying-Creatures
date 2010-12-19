@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F7F80FC-C0FA-41F6-9DA2-CD32A209ED9E}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlyingCreatures</RootNamespace>
+    <AssemblyName>FlyingCreatures</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Raven.Client.Lightweight, Version=1.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\RavenDB\Client\Raven.Client.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\StructureMap\deploy\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CreatureController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ajax-loader.gif" />
+    <Content Include="Content\flexigrid\accept.png" />
+    <Content Include="Content\flexigrid\coffee.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\flexigrid.css" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\._fhbg.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\._wbg.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\bg.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\btn-sprite.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\ddn.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\dn.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\fhbg.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\first.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\hl.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\last.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\line.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\load.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\load.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\magnifier.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\next.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\prev.gif" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\up.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\uup.png" />
+    <Content Include="Content\flexigrid\css\flexigrid\images\wbg.gif" />
+    <Content Include="Content\flexigrid\css\images\add.png" />
+    <Content Include="Content\flexigrid\css\images\close.png" />
+    <Content Include="Content\flexigrid\flash.png" />
+    <Content Include="Content\flexigrid\flexigrid.js" />
+    <Content Include="Content\flexigrid\flexigrid.pack.js" />
+    <Content Include="Content\flexigrid\index.html" />
+    <Content Include="Content\flexigrid\lib\jquery\jquery.js" />
+    <Content Include="Content\flexigrid\sample1.html" />
+    <Content Include="Content\flexigrid\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FlyingCreatures.Managers\FlyingCreatures.Managers.csproj">
+      <Project>{3F879A67-EE3A-4462-8897-24D447E94AF9}</Project>
+      <Name>FlyingCreatures.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlyingCreatures.Models\FlyingCreatures.Models.csproj">
+      <Project>{E05EFD5A-283C-42E9-84EF-A6DE612F29A0}</Project>
+      <Name>FlyingCreatures.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlyingCreatures.Repository\FlyingCreatures.Repository.csproj">
+      <Project>{32E2F7AC-CD36-48DF-9255-B86DC0061F35}</Project>
+      <Name>FlyingCreatures.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Creature\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\flexigrid\post.php" />
+    <None Include="Content\flexigrid\post2.php" />
+    <Content Include="Views\Creature\_CreatureGrid.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57113</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
