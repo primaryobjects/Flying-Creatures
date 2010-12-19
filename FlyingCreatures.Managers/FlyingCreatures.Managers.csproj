@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreatureManager.cs" />
+    <Compile Include="HelperManager.cs" />
     <Compile Include="WeaponManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

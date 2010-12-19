@@ -11,33 +11,28 @@ namespace FlyingCreatures.Controllers
 {
     public class CreatureController : Controller
     {
-        private Random _random = new Random((int)DateTime.Now.Ticks);
-
         public ActionResult Index()
         {
-            return View(CreatureManager.GetAll());
+            List<Creature> creatureList = CreatureManager.GetAll();
+
+            // If this is the first time running, create a fresh creature.
+            if (creatureList.Count == 0)
+            {
+                Creature creature = CreatureManager.CreateRandom();
+                CreatureManager.Insert(creature);
+                UnitOfWork.Commit();
+
+                creatureList.Add(creature);
+            }
+
+            return View(creatureList);
         }
 
         [HttpPost]
         public ActionResult GenerateCreature()
         {
-            Weapon weapon = new Weapon()
-            {
-                Name = "Claws",
-                Type = Weapon.WeaponType.Melee,
-                DamageMinimum = 0,
-                DamageMaximum = 3
-            };
-
-            Creature creature = new Creature
-            {
-                Name = "Random" + _random.Next(1, 500),
-                Age = _random.Next(1, 500),
-                Weapon = weapon
-            };
-
-            CreatureManager.Create(creature);
-
+            Creature creature = CreatureManager.CreateRandom();
+            CreatureManager.Insert(creature);
             UnitOfWork.Commit();
 
             return PartialView("_CreatureGrid", CreatureManager.GetAll());
@@ -53,7 +48,6 @@ namespace FlyingCreatures.Controllers
 
             return PartialView("_CreatureGrid", CreatureManager.GetAll());
         }
-
 
         /*
         //
